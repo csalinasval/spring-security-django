@@ -26,9 +26,9 @@ public class DjangoPasswordEncoder implements PasswordEncoder {
 
     @Override
     public boolean isPasswordValid(String passedInPassword, String rawPass, Object salt) {
-    	log.info("Parameters received are: ");
-    	log.info("Passed in password: "+passedInPassword);
-    	log.info("Raw pass: "+rawPass);
+    	log.debug("Parameters received are: ");
+    	log.debug("Passed in password: "+passedInPassword);
+    	log.debug("Raw pass: "+rawPass);
     	String[] encodedPassword = passedInPassword.split("\\$");
     	int encodedIterations = Integer.parseInt(encodedPassword[1]);
     	byte[] encodedSalt = encodedPassword[2].getBytes(Charset.forName("UTF-8"));
@@ -55,7 +55,7 @@ public class DjangoPasswordEncoder implements PasswordEncoder {
     		log.debug("User is good.");
     	    return true;
     	} else {
-    		log.error("User credentials are bullshit");
+    		log.debug("User credentials are bullshit");
     	    return false;
     	}
 

@@ -19,11 +19,11 @@ public class TestCases {
 
 	
 	@Test
-	public void testDaniel() {
+	public void testAgronometrics() {
 		String plainpassword =  "agronometrics";
-		String djangopassword = "pbkdf2_sha256$12000$CjyRUJvU6z7x$/DnEiqWK2BuTaljaAQZ8wjU8eQ/gHg8hqIRBrHTD0vM=";
+		String djangopassword = "pbkdf2_sha256$12000$CjyRUJvU6z7x$/DnEiqWK2BuTaljMmQZ8wjU8eQ/gHg8hqIRBrHTD0vM=";
 		DjangoPasswordEncoder encoder = new DjangoPasswordEncoder();
 		boolean response = encoder.isPasswordValid(djangopassword, plainpassword, "dummy");
-		assertTrue(response);
+		assertFalse(response);
 	}
 }
