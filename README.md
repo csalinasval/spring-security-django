@@ -7,7 +7,7 @@ Spring Security extension for integrate java applications with Django 1.6 databa
 - Java 8 Needed
 - For using it with spring configuration. Example:
 
-
+```
  <bean id="passwordEncoder" class="com.agronometrics.security.authentication.encoding.DjangoPasswordEncoder" />
  
  <bean id="userDetailsService"
@@ -26,3 +26,4 @@ Spring Security extension for integrate java applications with Django 1.6 databa
 			</value>
 		</property>
 	</bean>
+```
